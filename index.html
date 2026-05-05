@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Birthday Edition</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="introContainer" class="intro-overlay">
+      <video id="netflixIntro" playsinline>
+        <source src="netflix-intro.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <audio id="tudumSound">
+      <source src="tudum.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="profilePage" class="page active">
+      <div class="profile-container">
+        <h1>Siapa yang sedang menonton?</h1>
+        <div class="profiles">
+          <div class="profile-box">
+            <img
+              src="foto-profil2.jpg"
+              onclick="alert('Lu Siapeeeee???? ID Order lu noh belum target!')"
+            />
+            <p>Dinar</p>
+          </div>
+
+          <div class="profile-box" onclick="openPasswordModal()">
+            <img src="foto-profil.jpeg" />
+            <p>Anggi Sayang❤️</p>
+          </div>
+
+          <div class="profile-box">
+            <img
+              src="foto-profil3.jpeg"
+              onclick="
+                alert('Lu Siapeeeee???? Mending beli seblak, Gausah Kepo')
+              "
+            />
+            <p>Sintaeyong</p>
+          </div>
+        </div>
+
+        <div id="passwordModal" class="modal-password">
+          <div class="password-box">
+            <h2>Keamanan Profil</h2>
+            <p>Jawab pertanyaan ini untuk masuk:</p>
+            <p style="color: white; font-weight: bold; margin-bottom: 15px">
+              "Apa warna kesukaan aku?"
+            </p>
+            <input
+              type="password"
+              id="passInput"
+              placeholder="Ketik jawabannya..."
+            />
+            <div class="modal-btns">
+              <button class="btn-cancel" onclick="closePasswordModal()">
+                Batal
+              </button>
+              <button class="btn-submit" onclick="checkPassword()">
+                Masuk
+              </button>
+            </div>
+            <p
+              id="errorMessage"
+              style="
+                color: #e50914;
+                font-size: 12px;
+                margin-top: 15px;
+                display: none;
+              "
+            >
+              Salah! Masa kamu lupa? 🤔
+            </p>
+          </div>
+        </div>
+        <button class="manage-btn">KELOLA PROFIL</button>
+      </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+      <img
+        src="logo-ethosflix-01.png"
+        alt="Logo"
+        class="logo"
+        onclick="showPage('mainPage')"
+      />
+      <div class="nav-links">
+        <span onclick="showPage('mainPage')">Beranda</span>
+        <span onclick="showPage('seriesPage')">Series</span>
+        <span onclick="showPage('wishlistPage')">Coming Soon</span>
+        <span onclick="showPage('galleryPage')">Dokumentasi</span>
+      </div>
+    </nav>
+
+    <div id="mainPage" class="page">
+      <header class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+          <source src="video-utama.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-mask"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">Happy Birthday Sayang!</h1>
+          <p class="hero-description">
+            2026 Mungkin tahun yang bakal banyak ujian dan cobaan, seperti yang
+            udah kita jalanin belakangan ini, aku harap dengan adanya ujian ini
+            kita semua bisa bareng bareng terus yaaaa, LOVE UUUUUUU
+          </p>
+          <div class="hero-buttons">
+            <button class="btn play" onclick="playHeroVideo()">
+              ▶ Play Video
+            </button>
+            <button class="btn info" onclick="showPage('seriesPage')">
+              ⓘ Lihat Semua Kenangan
+            </button>
+          </div>
+        </div>
+        <div id="heroVideoOverlay" class="video-overlay">
+          <span class="close-video" onclick="closeHeroVideo()">&times;</span>
+          <video id="fullVideo" controls>
+            <source src="video-utama.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </header>
+
+      <div class="row">
+        <h2>FOTO FOTO FAVORITE AKU</h2>
+        <div class="posters">
+          <div class="card">
+            <img src="foto-kenangan.JPEG" alt="1" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan2.JPEG" alt="2" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan3.JPEG" alt="3" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan4.JPEG" alt="4" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan5.JPEG" alt="6" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan6.JPEG" alt="7" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan7.JPEG" alt="8" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan8.JPEG" alt="9" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan9.JPEG" alt="10" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan10.JPEG" alt="11" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan11.JPEG" alt="12" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan12.JPEG" alt="13" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan13.JPEG" alt="14" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan14.JPEG" alt="15" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan15.JPEG" alt="16" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan16.JPEG" alt="17" />
+          </div>
+          <div class="card">
+            <img src="foto-kenangan17.JPEG" alt="18" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="galleryPage" class="page">
+      <div class="gallery-container">
+        <h1 class="section-title">Ini Dokumentasi Aku Bikin Website Ini</h1>
+        <div class="video-grid">
+          <div class="video-item">
+            <video src="dokumentasi-video.MOV" loop></video>
+          </div>
+
+          <div class="video-item">
+            <video src="dokumentasi-2.MOV" muted loop></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="seriesPage" class="page">
+      <div class="series-container">
+        <h1 class="section-title">Moment Suka Duka Kita Berdua</h1>
+        <div class="episode-row">
+          <div class="ep-video">
+            <video controls>
+              <source src="eps-pecel lele.MP4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="ep-info">
+            <h3>Pertama Kali Kita Mam Pecel Lele</h3>
+            <p>
+              Ini Pertama Kalinya Kamu Ajak Aku Mam Pecel Lele Kesukaan kamu
+              sama temen temen kamu
+            </p>
+          </div>
+        </div>
+        <div class="episode-row">
+          <div class="ep-video">
+            <video controls>
+              <source src="eps-sedih.MOV" type="video/mp4" />
+            </video>
+          </div>
+          <div class="ep-info">
+            <h3>Part Paling Sedih Buat Kamu</h3>
+            <p>
+              Moment dimana kamu bener bener kecewa sama semua yang udah aku
+              lakuin ke kamu, aku minta maaf yaaaa
+            </p>
+          </div>
+        </div>
+        <div class="episode-row">
+          <div class="ep-video">
+            <video controls>
+              <source src="eps-kuliah.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="ep-info">
+            <h3>Awal Kamu Kuliah</h3>
+            <p>
+              Ini Awal Kamu Ketemu Temen Temen Kamu, Sampe Semuanya Jadi
+              Malapetaka Buat Aku :(
+            </p>
+          </div>
+        </div>
+        <div class="episode-row">
+          <div class="ep-video">
+            <video controls>
+              <source src="eps-kerumah sindi.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="ep-info">
+            <h3>Ini Waktu Kamu Ke Rumah Sindi</h3>
+            <p>
+              Kamu Sempet Buat Ngabarin Aku, Kalo Kamu Lagi Di Rumahnya Sindi
+            </p>
+          </div>
+        </div>
+        <div class="episode-row">
+          <div class="ep-video">
+            <video controls>
+              <source src="eps-review.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="ep-info">
+            <h3>Review NAILONGGGGGG</h3>
+            <p>
+              ini pas kamu beli tuyul tuyulan kamu ALIAS NAILONGGGGGG, dan kamu
+              kasih ke aku, yang akhirnya itu NAILONGGGGGGNYA ilang hehe,
+              maafffff
+            </p>
+          </div>
+        </div>
+        <div class="episode-row">
+          <div class="ep-video">
+            <video controls>
+              <source src="eps-nongkrong.MP4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="ep-info">
+            <h3>Ini Pas Nongkrong Sama Temen Kantor</h3>
+            <p>Ini pas kamu ikut nongkrong sama temen temen Ruangprint</p>
+          </div>
+        </div>
+        <div class="episode-row">
+          <div class="ep-video">
+            <video controls>
+              <source src="eps-pantai.MOV" type="video/mp4" />
+            </video>
+          </div>
+          <div class="ep-info">
+            <h3>Ini Moment Kita Yang Terbaru</h3>
+            <p>Ini tempat yang pengen banget kamu datengin, PANTAI MERAKKKK</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wishlistPage" class="page">
+      <div class="coming-soon-container">
+        <h1 class="section-title">Segera Hadir (2030-2045)</h1>
+
+        <div class="wishlist-grid">
+          <div class="wish-item">
+            <img src="bromo.jpg" />
+          </div>
+
+          <div class="wish-item tall">
+            <img src="bandung.png" />
+          </div>
+
+          <div class="wish-item wide">
+            <img src="jogja.jpeg" />
+          </div>
+
+          <div class="wish-item">
+            <img src="kota-banda-neira.jpg" />
+          </div>
+          <div class="wish-item">
+            <img src="prambanan.jpg" />
+          </div>
+          <div class="wish-item wide">
+            <img src="jepang.jpg" />
+          </div>
+          <div class="wish-item wide">
+            <img src="dufan.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="videoPlayerOverlay" class="video-player-overlay">
+      <video id="mainVideo" controls></video>
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p>Made With Sincerity❤️</p>
+        <p class="footer-name">Falka Derizqia</p>
+        <p class="footer-title">Ur Future Husband</p>
+      </div>
+    </footer>
+  </body>
+</html>
